@@ -1,2 +1,1 @@
-# Projeto-Domini-Dextera
-Projeto de Estoque em andamento
+# Projeto Domini Dextera (Em andamento)
