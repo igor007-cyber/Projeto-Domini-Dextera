@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="py-5">
+        <div class="col-sm-9 col-md-7 col-lg-7 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="formAdd">
+                        <div class="form-group col-md-12">
+                            <h5 class="card-title text-center">Cadastro de Marca</h5>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label class="text-white">Descrição:</label>
+                            <input type="text" maxlength="255" class="form-control" id="description" formControlName="description"
+                                placeholder="Informe a descrição" />
+                            <div *ngIf="submitted && q.description.errors">
+                                <p *ngIf="q.description.errors.required" class="text-danger small">Informe a descrição</p>
+                            </div>
+                        </div>  
+
+                        <div class="form-group col-md-12 py-1">
+                            <button type="button" class="btn btn-rounded btn-primary" (click)="onSave()">
+                                <i class="fa fa-save"></i>
+                            </button>
+                            <button type="button" class="btn btn-rounded btn-danger ml-2" (click)="onCancel()">
+                                <i class="fas fa-arrow-circle-left"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

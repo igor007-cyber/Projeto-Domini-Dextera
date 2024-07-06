@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+      "target": "https://viacep.com.br/ws/",
+      "secure": false,
+      "logLevel": "debug"
+  }
+  
+  
+}

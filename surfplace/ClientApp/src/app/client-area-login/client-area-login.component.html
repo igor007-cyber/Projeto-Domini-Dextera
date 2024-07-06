@@ -1,0 +1,92 @@
+    <div class="container py-5">
+      <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+              <div class="card card-signin">
+                  <div class="text-center py-5">
+                      <i class="fa fa-user-circle fa-5x"></i>
+                      <h5 class="card-title">Login</h5>
+                  </div>
+                  <div class="card-body">
+                      <div *ngIf="!hasLogin" class="my-2">
+                          <form [formGroup]='formLogin' class="form-signin">
+                              <div class="form-group">
+                                  <input type="text" formControlName="email" placeholder="Informe o email..."
+                                      class="form-control">
+                              </div>
+                              <div *ngIf="submittedLogin && fl.email.errors">
+                                  <p *ngIf="fl.email.errors.required" class="text-danger small">* Informe o
+                                      email</p>
+                              </div>
+                              <div class="form-group">
+                                  <input type="password" formControlName="secret"
+                                      placeholder="Informe a senha..." class="form-control">
+                              </div>
+                              <div *ngIf="submittedLogin && fl.secret.errors">
+                                  <p *ngIf="fl.secret.errors.required" class="text-danger small">* Informe a
+                                      senha</p>
+                              </div>
+                              <button class="btn btn-rounded btn-outline-secondary btn-block"
+                                  (click)="onLoginClient()">
+                                  <i class="fas fa-user"></i>
+                                  Login</button>
+                          </form>
+                      </div>
+                      <div *ngIf="hasLogin" class="my-2">
+                          <form [formGroup]='formRegister' class="form-signin">
+                            <div class="form-group">
+                                <label>Nome de usuário</label>
+                                  <input type="text" formControlName="userName" placeholder="Informe o nome de usuário..."
+                                      class="form-control">
+                              </div>
+                              <div *ngIf="submittedRegister && fr.userName.errors">
+                                <p *ngIf="fr.userName.errors.required" class="text-danger small">* Informe o
+                                    nome de usuário</p>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                  <input type="text" formControlName="email" placeholder="Informe o email..."
+                                      class="form-control">
+                              </div>
+                              <div *ngIf="submittedRegister && fr.email.errors">
+                                  <p *ngIf="fr.email.errors.required" class="text-danger small">* Informe o
+                                      email</p>
+                              </div>
+                              <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" formControlName="secret"
+                                    placeholder="Informe a senha..." class="form-control">
+                            </div>
+                              <div *ngIf="submittedRegister && fr.secret.errors">
+                                <p *ngIf="fr.secret.errors.required" class="text-danger small">* Informe a
+                                    senha</p>
+                            </div>
+
+                              <button *ngIf="recoverPassword"
+                                  class="btn btn-rounded btn-outline-secondary btn-block"
+                                  (click)="onRecoverPassword()">
+                                  <i class="fas fa-user-lock"></i>
+                                  Esqueci a senha</button>
+                              <button
+                                  class="btn btn-lg btn-secondary btn-block"
+                                  (click)="onRegisterClient()">
+                                  <i class="fas fa-envelope-open"></i>
+                                  Criar conta com e-mail</button>
+                              <button class="btn btn-lg btn-success btn-block"
+                                  (click)="hasLoginClient()">
+                                  <i class="fas fa-user"></i>
+                                  Já tenho conta</button>
+                          </form>
+                      </div>
+                      <!-- <button type="button" class="btn btn-lg btn-danger btn-block"
+                          (click)="signInWithGoogle()">
+                          <i class="fab fa-google"></i>
+                          Login com Google</button>
+
+                      <button type="button" (click)="facebookSignin()"
+                          class="btn btn-lg btn-primary btn-block"> <i class="fab fa-facebook"></i> Login com
+                          Facebook</button> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

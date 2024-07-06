@@ -1,0 +1,59 @@
+<div class="container py-2">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card card-signin my-3">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <h6>Gráfico de Movimentação de Entrada 2022</h6>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-12">
+                                <label>Selecione um Produto:</label>
+                                <select class="form-control" formControlName="product" (change)="onChange()">
+                                    <option [value]="product.id" *ngFor="let product of lst">{{product.description}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myChart" width="800" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container py-2">
+    <form [formGroup]="formRel">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card card-signin my-3">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <h6>Relatório de movimentação do produto</h6>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-12">
+                                <label>Selecione um Produto:</label>
+                                <select class="form-control" formControlName="product" (change)="onChangeProduct()">
+                                    <option [value]="product.id" *ngFor="let product of products">{{product.description}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
